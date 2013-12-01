@@ -6,6 +6,10 @@ class PeopleController < ApplicationController
   def index
     @people = Person.all
    # @json = Person.all.to_gmaps4rails
+   @hash = Gmaps4rails.build_markers(@people) do |person, marker|
+    marker.lat person.latitude
+    marker.lng person.longitude
+   end
   end
 
   # GET /people/1
