@@ -5,6 +5,7 @@ class PeopleController < ApplicationController
   # GET /people.json
   def index
     @people = Person.all
+   # @json = Person.all.to_gmaps4rails
   end
 
   # GET /people/1
